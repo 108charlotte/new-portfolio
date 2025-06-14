@@ -12,17 +12,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171717;
-    --foreground: rgb(209, 209, 209);
-  }
+:root {
+  --background: #171717;
+  --foreground: rgb(209, 209, 209);
+  --light-background: #474747; 
+  --lighter-background: #888888;
 }
 
 html, body {
   background: var(--background) !important;
   color: var(--foreground) !important;
   font-family: 'Inter', sans-serif !important;
+  margin: 10px; 
 }
 
 h1 {
@@ -32,5 +33,35 @@ h1 {
 
 .icons {
   display: flex; 
-  gap: 0.1rem; 
+  gap: 0.75rem;
+  align-items: center; 
+  padding: 10px; 
+}
+
+.language_icon, .framework_icon {
+  /* for some reason the flask logo didn't want to listen to the html so ig I have to write this here */
+  width: 37px; 
+  height: 37px; 
+  padding: 0.5px; 
+  border-radius: 25%; 
+  object-fit: contain; 
+}
+
+.icon_container {
+  width: 50px; 
+  height: 50px; 
+  overflow: hidden; 
+  border-radius: 50%; 
+  border: 2px solid var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--lighter-background); 
+}
+
+.icons_container {
+  background-color: var(--light-background);
+  border-radius: 10px; 
+  padding: 10px; 
+  margin: 10px 0; 
 }
