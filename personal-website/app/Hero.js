@@ -1,8 +1,26 @@
 export default function Hero() {
   return (
-    <div>
-      <h1>Charlotte Woodrum</h1>
-      <p>I am a high schooler who's passionate about...</p>
-    </div>
+    <section id="hero" className="h-screen w-full snap-start flex flex-col items-center justify-center">
+      <h1>
+        Hi, I'm <span className="name">Charlotte Woodrum</span>
+      </h1>
+      <h3 className="headline">
+        Aspiring Technologist & AI Enthusiast
+      </h3>
+      <p className="summary text-center">
+        I’m a high school programmer who loves building projects and solving problems with code. 
+      </p>
+      <a
+        href="#projects"
+        className="projects-button inline-block px-3 py-0.5 mt-2 font-bold rounded hover:text-gray-900 transition">
+        View My Projects
+      </a>
+      <a
+        href="#contact"
+        className="contact-button inline-block px-3 py-0.5 mt-3 border-1 font-bold rounded hover:text-gray-900 transition"
+      >
+        Get in Touch
+      </a>
+    </section>
   );
 }

@@ -16,7 +16,9 @@
   --background: #171717;
   --foreground: rgb(209, 209, 209);
   --light-background: #474747; 
+  --in-between-background: #626262;
   --lighter-background: #888888;
+  --accent-color: #6375e0; 
 }
 
 html, body {
@@ -24,6 +26,11 @@ html, body {
   color: var(--foreground) !important;
   font-family: 'Inter', sans-serif !important;
   margin: 10px; 
+  scroll-behavior: smooth; 
+}
+
+p {
+  font-weight: 100; 
 }
 
 h1 {
@@ -64,4 +71,57 @@ h1 {
   border-radius: 10px; 
   padding: 10px; 
   margin: 10px 0; 
+}
+
+.name {
+  font-weight: 600;
+  color: var(--accent-color);
+  text-shadow: 2px 2px 8px #30303088;
+}
+
+.projects-button {
+  background-color: var(--accent-color); 
+}
+
+.contact-button {
+  color: var(--accent-color); 
+  border: 2px solid var(--accent-color);
+}
+
+.contact-button:hover {
+  background-color: var(--accent-color); 
+  color: var(--background); 
+}
+
+h2 {
+  color: var(--accent-color); 
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.headline {
+  color: var(--in-between-background)
+}
+
+.email {
+  color: var(--accent-color); 
+}
+
+.email:hover {
+  color: var(--foreground)
+}
+
+h2:hover {
+  color: var(--foreground);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+main::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+main {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }

@@ -3,7 +3,9 @@ import Image from "next/image";
 export default function Skills() {
   return (
     <>
-      <div className="icons_container">
+    <div id="skills" className="h-screen w-full snap-start flex flex-col items-center justify-center">
+        <h2>Skills</h2>
+        <div className="icons_container">
         <p>Languages</p>
         <div className="icons">
           <Logo path="/python_logo.png" className="language_icon" />
@@ -18,6 +20,7 @@ export default function Skills() {
           <Logo path="/flask_logo.svg" className="framework_icon" />
           <Logo path="/react_logo.svg" className="framework_icon" />
         </div>
+      </div>
       </div>
     </>
   );
