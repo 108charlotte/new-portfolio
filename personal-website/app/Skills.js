@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Skills() {
   return (
     <>
-    <div id="skills" className="h-screen w-full snap-start flex flex-col items-center justify-center">
+    <div id="skills" className="overflow-y-auto h-screen w-full snap-start flex flex-col items-center justify-center">
         <h2>Skills</h2>
         <div className="icons_container">
         <p>Languages</p>

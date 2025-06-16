@@ -115,13 +115,11 @@ h2:hover {
   color: var(--foreground);
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-main::-webkit-scrollbar {
+/* Hide scrollbars for all elements */
+*::-webkit-scrollbar {
   display: none;
 }
-
-/* Hide scrollbar for IE, Edge and Firefox */
-main {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

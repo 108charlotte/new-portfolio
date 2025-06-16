@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section id="hero" className="h-screen w-full snap-start flex flex-col items-center justify-center">
+    <section id="hero" className="overflow-y-auto h-screen w-full snap-start flex flex-col items-center justify-center">
       <h1>
         Hi, I'm <span className="name">Charlotte Woodrum</span>
       </h1>
