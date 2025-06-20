@@ -1,9 +1,16 @@
 import Image from "next/image";
+import { motion } from "framer-motion"; 
 
 export default function Skills() {
   return (
-    <>
-    <div id="skills" className="overflow-y-auto h-screen w-full snap-start flex flex-col items-center justify-center">
+    <motion.div
+    id="skills"
+    className="overflow-y-auto h-screen w-full snap-start flex flex-col items-center justify-center"
+    initial={{opacity:0}}
+    whileInView={{opacity:1}}
+    viewport={{ once: false, amount: 0.3 }}
+    transition={{duration: 2, ease: "easeInOut"}}
+    >
         <h2>Skills</h2>
         <div className="icons_container">
         <p>Languages</p>
@@ -21,8 +28,7 @@ export default function Skills() {
           <Logo path="/react_logo.svg" className="framework_icon" />
         </div>
       </div>
-      </div>
-    </>
+      </motion.div>
   );
 }
 

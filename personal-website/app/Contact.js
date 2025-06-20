@@ -1,9 +1,19 @@
+import { motion } from "framer-motion"; 
+
 export default function Contact() {
     return (
-        <div id="contact" className="overflow-y-auto text-center h-screen w-full snap-start flex flex-col items-center justify-center">
+        <motion.div
+        id="contact"
+        className="overflow-y-auto text-center h-screen w-full snap-start flex flex-col items-center justify-center"
+        initial={{opacity: 0}}
+        whileInView={{opacity: 1}}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 2, ease: "easeInOut"}}
+        >
           <h2>Contact Me</h2>
-            <p>Feel free to email me about anything--I'm open to questions, project ideas, or just saying hi! </p>
+            <p>Feel free to reach out to me about anything--I'm open to questions, project ideas, or just saying hi! </p>
             <p>Email: <a className="email underline hover:no-underline transition-colors font-medium" href="mailto: charlottewoodrum@westminster.net">charlottewoodrum@westminster.net</a></p>
-        </div>
+            <p className="mt-4">Connect with me on <a className="email underline hover:no-underline transition-colors font-medium" href="www.linkedin.com/in/charlotte-woodrum-557900370">LinkedIn</a>!</p>
+        </motion.div>
     )
 }

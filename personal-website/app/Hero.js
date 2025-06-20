@@ -1,6 +1,18 @@
+import {motion} from "framer-motion"; 
+
 export default function Hero() {
   return (
-    <section id="hero" className="overflow-y-auto h-screen w-full snap-start flex flex-col items-center justify-center">
+    <motion.section
+      id="hero"
+      className="overflow-y-auto h-screen w-full snap-start flex flex-col items-center justify-center"
+      initial={{opacity: 0, y: -50}}
+      whileInView={{opacity: 1, y: 0}}
+      transition={{
+        opacity: { duration: 1.5 },
+        y: { duration: 0.8 }
+      }}
+      viewport={{ once: false, amount: 0.3 }}
+      >
       <h1>
         Hi, I'm <span className="name">Charlotte Woodrum</span>
       </h1>
@@ -21,6 +33,6 @@ export default function Hero() {
       >
         Get in Touch
       </a>
-    </section>
+    </motion.section>
   );
 }
