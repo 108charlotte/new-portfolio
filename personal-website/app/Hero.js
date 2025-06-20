@@ -5,7 +5,7 @@ export default function Hero() {
         Hi, I'm <span className="name">Charlotte Woodrum</span>
       </h1>
       <h3 className="headline">
-        Aspiring Technologist & AI Enthusiast
+        Aspiring Software Engineer & AI Enthusiast
       </h3>
       <p className="summary text-center">
         I’m a high school programmer who loves building projects and solving problems with code. 

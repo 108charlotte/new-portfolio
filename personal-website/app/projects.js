@@ -10,8 +10,8 @@ const projects = [
     }, 
     {
         title: "Web Analytics",
-        description: "Description of project 2.",
-        image: "",
+        description: "A chrome extension that tracks your web activity and provides insights in the form of a pie chart",
+        image: "/web_analytics.png",
         github: "https://github.com/108charlotte/webAnalytics/tree/v2.1", 
         demo: "https://github.com/108charlotte/webAnalytics/releases/tag/v2.1"
     },
@@ -19,8 +19,8 @@ const projects = [
         title: "Raspberry Pi Productivity Monitor",
         description: "A monitor mounted above my desk powered by a Raspberry Pi with a custom display to enhance my productivity. ",
         image: "/Raspberry-pi-monitor.jpg",
-        github: "", 
-        demo: ""
+        github: "https://github.com/108charlotte/magic-mirror", 
+        demo: "https://108charlotte.github.io/magic-mirror/"
     }
 ]
 
