@@ -1,6 +1,15 @@
+import {motion} from "framer-motion"; 
+
 export default function About() {
     return (
-        <div id="about" className="h-screen w-full snap-start flex flex-col items-center justify-center overflow-y-auto">
+        <motion.div
+        id="about"
+        className="h-screen w-full snap-start flex flex-col items-center justify-center overflow-y-auto"
+        initial={{opacity:0}}
+        whileInView={{opacity:1}}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{duration: 2, ease: "easeInOut"}}
+        >
             <h2>About Me</h2>
             <p className="max-w-2xl text-center">
                 At school, I am a programmer for Westminster's FIRST robotics team, 2415, and a Mu Alpha Theta executive council member. 
@@ -11,6 +20,6 @@ export default function About() {
                 So, I chose to switch to a project-based approach--after only a few weeks, it transformed my growth—I began building projects that truly interested me and, along the way, learned to use powerful new frameworks and tools. 
                 Now, I'm excited to share my journey and show the world how rewarding it is to pursue your own ideas!
             </p>
-        </div>
+        </motion.div>
     )
 }
