@@ -41,6 +41,12 @@ const projects = [
 
 
 export default function Projects({ isDarkMode }) {
+    const title_color = isDarkMode ? "text-white" : "text-zinc-900";
+    const description_color = isDarkMode ? "text-gray-300" : "text-zinc-700";
+    const latest_updates_color = isDarkMode ? "text-yellow-400" : "text-yellow-600";
+    const extra_color = isDarkMode ? "text-pink-400" : "text-pink-600";
+    const demo_notes_color = isDarkMode ? "text-gray-400" : "text-gray-600";
+    
     return (
         <FadeIn id="projects" className="h-screen w-full snap-start flex flex-col items-center justify-start">
             <h2 className="mb-4 mt-6">Projects</h2>
@@ -81,20 +87,20 @@ export default function Projects({ isDarkMode }) {
                         </div>
                         <div className="w-full sm:w-3/5 flex flex-col h-full justify-center">
                             {project.extra && (
-                              <p className="text-xs text-pink-400 font-bold uppercase mb-1">{project.extra}</p>
+                                <p className={`text-xs font-bold uppercase mb-1 ${extra_color}`}>{project.extra}</p>
                             )}
-                            <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-                            <p className="text-sm text-gray-300 mt-1 mb-2">{project.description}</p>
-                            <p className="text-xs text-yellow-400 font-semibold mb-2">
+                            <h3 className={`text-lg font-semibold ${title_color}`}>{project.title}</h3>
+                            <p className={`text-sm mt-1 mb-2 ${description_color}`}>{project.description}</p>
+                            <p className={`text-xs font-semibold mb-2 ${latest_updates_color}`}>
                               Latest Updates: {project.latest_updates}
                             </p>
                             {project.demo && (
-                              <p className="text-xs text-gray-400 italic mb-1">
+                              <p className={`text-xs italic mb-1 ${demo_notes_color}`}>
                                 Click anywhere for demo
                               </p>
                             )}
                             {project.demo_notes && (
-                              <p className="text-xs text-gray-400 mb-2">Demo Notes: {project.demo_notes}</p>
+                              <p className={`text-xs mb-2 ${demo_notes_color}`}>Demo Notes: {project.demo_notes}</p>
                             )}
                             <a
                             href={project.github}
