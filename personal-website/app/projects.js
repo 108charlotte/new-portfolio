@@ -32,7 +32,7 @@ const projects = [
         extra: "Sneak Peek! ", 
         title: "Chef Crawler", 
         description: "A godot roguelike game in which the player gathers ingredients and combines them to create dishes which provide power-ups or temporarily disable them. ", 
-        github: "", 
+        github: "https://github.com/108charlotte/Chef-Crawler", 
         image: "/chef_crawler_image.png", 
         latest_updates: "Got basic roguelike game mechanics working! ", 
         demo_notes: "This project is still in development so there is no demo available yet. "
@@ -43,7 +43,7 @@ const projects = [
 export default function Projects() {
     return (
         <FadeIn id="projects" className="h-screen w-full snap-start flex flex-col items-center justify-start">
-            <h2 className="mb-4 mt-18">Projects</h2>
+            <h2 className="mb-4 mt-6">Projects</h2>
             <div className="flex flex-row overflow-x-auto gap-6 w-full px-4 pb-4 snap-x snap-mandatory">
                 {projects.map((project, idx) => (
                     <motion.a
