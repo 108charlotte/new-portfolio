@@ -8,7 +8,7 @@ export default function Hero() {
       initial={{opacity: 0, y: -50}}
       whileInView={{opacity: 1, y: 0}}
       transition={{
-        opacity: { duration: 1.5 },
+        opacity: { duration: 3 },
         y: { duration: 0.8 }
       }}
       viewport={{ once: false, amount: 0.3 }}

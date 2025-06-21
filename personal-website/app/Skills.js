@@ -1,16 +1,9 @@
 import Image from "next/image";
-import { motion } from "framer-motion"; 
+import FadeIn from "./FadeIn";
 
 export default function Skills() {
   return (
-    <motion.div
-    id="skills"
-    className="overflow-y-auto h-screen w-full snap-start flex flex-col items-center justify-center"
-    initial={{opacity:0}}
-    whileInView={{opacity:1}}
-    viewport={{ once: false, amount: 0.3 }}
-    transition={{duration: 2, ease: "easeInOut"}}
-    >
+    <FadeIn id="skills" className="overflow-y-auto h-screen w-full snap-start flex flex-col items-center justify-center">
         <h2>Skills</h2>
         <div className="icons_container">
         <p>Languages</p>
@@ -28,7 +21,7 @@ export default function Skills() {
           <Logo path="/react_logo.svg" className="framework_icon" />
         </div>
       </div>
-      </motion.div>
+      </FadeIn>
   );
 }
 

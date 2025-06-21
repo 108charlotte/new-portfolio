@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import FadeIn from "./FadeIn";
 
 const projects = [
     {
@@ -28,18 +28,11 @@ const projects = [
 
 export default function Projects() {
     return (
-        <motion.div
-        id="projects"
-        className="h-screen w-full snap-start flex flex-col items-center justify-start"
-        initial={{opacity: 0}}
-        whileInView={{opacity: 1}}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 2, ease: "easeInOut"}}
-        >
+        <FadeIn id="projects" className="h-screen w-full snap-start flex flex-col items-center justify-start">
             <h2 className="mb-4 mt-18">Projects</h2>
             <div className="flex flex-row overflow-x-auto gap-6 w-full px-4 pb-4">
                 {projects.map((project, idx) => (
-                    <a key={idx} href={project.demo} target="_blank" rel="noopener noreferrer" className="bg-gray-800 rounded-lg shadow-lg p-4 w-80 flex-shrink-0 flex flex-col justify-between">
+                    <a key={idx} href={project.demo} target="_blank" rel="noopener noreferrer" className="bg-gray-800 rounded-lg shadow-lg p-4 w-70 flex-shrink-0 flex flex-col justify-between">
                         <div className="w-full h-40 relative mb-3">
                             <Image src={project.image} alt={project.title} fill className="object-contain rounded" sizes="256px"/>
                         </div>
@@ -50,6 +43,6 @@ export default function Projects() {
                 ))}
 
             </div>
-        </motion.div>
+        </FadeIn>
     )
 }
