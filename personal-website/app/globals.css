@@ -21,6 +21,15 @@
   --accent-color: #6375e0; 
 }
 
+.light {
+  --background: #ffffff;
+  --foreground: #171717;
+  --light-background: #e5e5e5;
+  --in-between-background: #bdbdbd;
+  --lighter-background: #f3f3f3;
+  --accent-color: #6375e0; /* or a different accent if you want */
+}
+
 html, body {
   background: var(--background) !important;
   color: var(--foreground) !important;

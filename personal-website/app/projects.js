@@ -40,7 +40,7 @@ const projects = [
 ]
 
 
-export default function Projects() {
+export default function Projects({ isDarkMode }) {
     return (
         <FadeIn id="projects" className="h-screen w-full snap-start flex flex-col items-center justify-start">
             <h2 className="mb-4 mt-6">Projects</h2>
@@ -51,13 +51,14 @@ export default function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="
-                          bg-gray-800 rounded-lg shadow-lg p-4
+                        className={`
+                          rounded-lg shadow-lg p-4
                           w-[16rem] h-[26rem]
                           sm:w-[32rem] sm:h-80
                           md:w-[32rem] md:h-76
                           flex-shrink-0 flex flex-col sm:flex-row items-center gap-4 snap-center
-                        "
+                          ${isDarkMode ? "bg-gray-800 text-white" : "bg-zinc-200 text-zinc-900"}
+                        `}
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, type: 'spring' }}

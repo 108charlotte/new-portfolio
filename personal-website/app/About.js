@@ -1,6 +1,6 @@
 import FadeIn from "./FadeIn";
 
-export default function About() {
+export default function About({ isDarkMode }) {
   return (
     <FadeIn id="about" className="h-screen w-full snap-start flex flex-col items-center justify-center overflow-y-auto">
       <h2>About Me</h2>

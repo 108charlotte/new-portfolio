@@ -1,6 +1,6 @@
 import FadeIn from "./FadeIn";
 
-export default function Contact() {
+export default function Contact({ isDarkMode }) {
     return (
         <FadeIn id="contact" className="overflow-y-auto text-center h-screen w-full snap-start flex flex-col items-center justify-center">
           <h2>Contact Me</h2>
