@@ -14,14 +14,14 @@ export function Languages({ path, imgClassName, label, size = "w-14 h-14", textS
   );
 }
 
-export function Platforms({ path, label, size = "w-12 h-12", imgClassName, textSize = "text-xs", labelMargin = "mt-1", forceColumn }) {
+export function Platforms({ path, label, size = "w-12 h-12", imgClassName, textSize = "text-xs", labelMargin = "mt-1", forceColumn, labelClassName }) {
   return (
     <Logo
       path={path}
       className={`${size} rounded border-4 border-purple-500 overflow-hidden flex items-center justify-center bg-white rotate-45`}
       imgClassName={imgClassName || "-rotate-45 w-8 h-8"}
       label={label}
-      labelClassName="mt-3 sm:mt-0 sm:ml-4"
+      labelClassName={labelClassName || "mt-3 sm:mt-0 sm:ml-4"}
       textSize={textSize}
       labelMargin={labelMargin}
       forceColumn={forceColumn}

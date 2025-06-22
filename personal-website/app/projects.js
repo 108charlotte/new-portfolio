@@ -51,7 +51,7 @@ const logoMap = {
   Javascript: <Languages path="/javascript_logo.png" label="JavaScript" size="w-8 h-8" imgClassName="w-4 h-4" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
   Flask: <Frameworks path="/flask_logo.svg" label="Flask" size="w-8 h-8" imgClassName="w-5 h-5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
   React: <Frameworks path="/react_logo.svg" label="React" size="w-8 h-8" imgClassName="w-6 h-6" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
-  Godot: <Platforms path="/godot_logo.svg" label="Godot" size="w-8 h-8" imgClassName="w-5 h-5 -rotate-45" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  Godot: <Platforms path="/godot_logo.svg" label="Godot" size="w-8 h-8" imgClassName="w-5 h-5 -rotate-45" labelClassName="mt-2" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
 };
 
 
