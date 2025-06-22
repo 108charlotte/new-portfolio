@@ -67,11 +67,13 @@ export default function Projects({ isDarkMode }) {
             <h2 className="mb-4 mt-2 md:mt-14 sm:mt-14">Projects</h2>
             <div className="flex flex-row overflow-x-auto gap-6 w-full px-4 pb-4 snap-x snap-mandatory">
                 {projects.map((project, idx) => (
-                    <motion.a
+                    <motion.div
                         key={idx}
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        onClick={() => {
+                          if (project.demo) window.open(project.demo, "_blank", "noopener,noreferrer");
+                        }}
+                        role="link"
+                        tabIndex={0}
                         className={`
                           rounded-lg shadow-lg p-4
                           w-[16rem] h-[30rem]
@@ -132,7 +134,7 @@ export default function Projects({ isDarkMode }) {
                             Github Repo
                             </a>
                         </div>
-                    </motion.a>
+                    </motion.div>
                 ))}
 
             </div>

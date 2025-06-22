@@ -57,7 +57,13 @@ export function Logo({
   return (
     <div className={`flex flex-col items-center ${width}`}>
       <div className={className}>
-        <Image src={path} alt={label || "Logo"} className={`object-contain ${imgClassName || "w-10 h-10"}`} />
+        <Image
+          src={path}
+          alt={label || "Logo"}
+          width={40}
+          height={40}
+          className={`object-contain ${imgClassName || "w-10 h-10"}`}
+        />
       </div>
       <p className={`${labelMargin} text-gray-400 uppercase tracking-wide font-semibold ${labelClassName || ""} ${textSize}`}>{label}</p>
     </div>
