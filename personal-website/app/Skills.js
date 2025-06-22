@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FadeIn from "./FadeIn";
+import { Languages, Frameworks, Platforms } from "./SkillIcons";
 
 export default function Skills({ isDarkMode }) {
   const cardBg = isDarkMode ? "bg-gray-800 text-white" : "bg-zinc-200 text-zinc-900";
@@ -25,49 +26,5 @@ export default function Skills({ isDarkMode }) {
         </div>
       </div>
     </FadeIn>
-  );
-}
-
-function Languages({ path, imgClassName, label }) {
-  return (
-    <Logo
-      path={path}
-      className="w-14 h-14 rounded-full border-4 border-blue-500 overflow-hidden flex items-center justify-center bg-white"
-      imgClassName={imgClassName}
-      label={label}
-    />
-  );
-}
-
-function Platforms({ path, label }) {
-  return (
-    <Logo
-      path={path}
-      className="w-12 h-12 rounded border-4 border-purple-500 overflow-hidden flex items-center justify-center bg-white rotate-45"
-      imgClassName="-rotate-45 w-8 h-8"
-      label={label}
-      labelClassName="mt-3 sm:mt-0 sm:ml-4"
-    />
-  );
-}
-
-function Frameworks({ path, label }) {
-  return (
-    <Logo
-      path={path}
-      className="w-14 h-14 rounded border-4 border-green-600 overflow-hidden flex items-center justify-center bg-white"
-      label={label}
-    />
-  )
-}
-
-function Logo({ path, className, imgClassName, label, labelClassName }) {
-  return (
-    <div className="flex flex-col sm:flex-row items-center">
-      <div className={className}>
-        <img src={path} alt={label || "Logo"} className={`object-contain ${imgClassName || "w-10 h-10"}`} />
-      </div>
-      <p className={`mt-1 sm:mt-0 sm:ml-2 text-gray-400 uppercase tracking-wide text-xs font-semibold ${labelClassName || ""}`}>{label}</p>
-    </div>
   );
 }

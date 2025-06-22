@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import FadeIn from "./FadeIn";
 import { motion } from 'framer-motion'; 
+import { Languages, Frameworks, Platforms } from "./SkillIcons";
 
 const projects = [
     {
@@ -9,7 +10,8 @@ const projects = [
         image: "/JARVIS_image_demo.png",
         github: "https://github.com/108charlotte/python-voice-assistant", 
         demo: "https://python-voice-assistant.onrender.com/", 
-        latest_updates: "Created first deployment! Still working through a lot of bugs, so let me know if you encounter any strange behavior! "
+        latest_updates: "Created first deployment! Still working through a lot of bugs, so let me know if you encounter any strange behavior! ", 
+        logos: ["Python", "Javascript", "Flask", "HTML", "CSS"]
     }, 
     {
         title: "Web Analytics",
@@ -18,7 +20,8 @@ const projects = [
         github: "https://github.com/108charlotte/webAnalytics/tree/v2.1", 
         demo: "https://github.com/108charlotte/webAnalytics/releases/tag/v2.1", 
         demo_notes: "This extension is not yet available on the web store yet, so the demo link will take you to a github release with a .zip file and instructions for installation. ", 
-        latest_updates: "Re-submitted to the Chrome Web Store, awaiting response (typically timeline is about 1-2 weeks)"
+        latest_updates: "Re-submitted to the Chrome Web Store, awaiting response (typically timeline is about 1-2 weeks)", 
+        logos: ["Javascript", "HTML", "Flask"]
     },
     {
         title: "Raspberry Pi Productivity Monitor",
@@ -26,7 +29,8 @@ const projects = [
         image: "/Raspberry-pi-monitor.jpg",
         github: "https://github.com/108charlotte/magic-mirror", 
         demo: "https://108charlotte.github.io/magic-mirror/", 
-        latest_updates: "Currently working on re-submitting for OAuth verification to get rid of scary 'unprotected' warning when user tries to grant access to their Google Calendar. "
+        latest_updates: "Currently working on re-submitting for OAuth verification to get rid of scary 'unprotected' warning when user tries to grant access to their Google Calendar. ", 
+        logos: ["HTML", "CSS", "Javascript"]
     }, 
     {
         extra: "Sneak Peek! ", 
@@ -35,9 +39,20 @@ const projects = [
         github: "https://github.com/108charlotte/Chef-Crawler", 
         image: "/chef_crawler_image.png", 
         latest_updates: "Got basic roguelike game mechanics working! ", 
-        demo_notes: "This project is still in development so there is no demo available yet. "
+        demo_notes: "This project is still in development so there is no demo available yet. ", 
+        logos: ["Godot"]
     }
 ]
+
+const logoMap = {
+  Python: <Languages path="/python_logo.png" label="Python" size="w-8 h-8" imgClassName="w-5 h-5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  HTML: <Languages path="/html_logo.png" label="HTML" size="w-8 h-8" imgClassName="w-4.5 h-4.5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  CSS: <Languages path="/css_logo.png" label="CSS" size="w-8 h-8" imgClassName="w-4.5 h-4.5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  Javascript: <Languages path="/javascript_logo.png" label="JavaScript" size="w-8 h-8" imgClassName="w-4 h-4" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  Flask: <Frameworks path="/flask_logo.svg" label="Flask" size="w-8 h-8" imgClassName="w-5 h-5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  React: <Frameworks path="/react_logo.svg" label="React" size="w-8 h-8" imgClassName="w-6 h-6" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  Godot: <Platforms path="/godot_logo.svg" label="Godot" size="w-8 h-8" imgClassName="w-5 h-5 -rotate-45" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+};
 
 
 export default function Projects({ isDarkMode }) {
@@ -49,7 +64,7 @@ export default function Projects({ isDarkMode }) {
     
     return (
         <FadeIn id="projects" className="h-screen w-full snap-start flex flex-col items-center justify-start">
-            <h2 className="mb-4 mt-6">Projects</h2>
+            <h2 className="mb-4 mt-6 md:mt-14 sm:mt-14">Projects</h2>
             <div className="flex flex-row overflow-x-auto gap-6 w-full px-4 pb-4 snap-x snap-mandatory">
                 {projects.map((project, idx) => (
                     <motion.a
@@ -59,9 +74,9 @@ export default function Projects({ isDarkMode }) {
                         rel="noopener noreferrer"
                         className={`
                           rounded-lg shadow-lg p-4
-                          w-[16rem] h-[26rem]
-                          sm:w-[32rem] sm:h-80
-                          md:w-[32rem] md:h-76
+                          w-[16rem] h-[30rem]
+                          sm:w-[32rem] sm:h-100
+                          md:w-[32rem] md:h-100
                           flex-shrink-0 flex flex-col sm:flex-row items-center gap-4 snap-center
                           ${isDarkMode ? "bg-gray-800 text-white" : "bg-zinc-200 text-zinc-900"}
                         `}
@@ -95,13 +110,18 @@ export default function Projects({ isDarkMode }) {
                               Latest Updates: {project.latest_updates}
                             </p>
                             {project.demo && (
-                              <p className={`text-xs italic mb-1 ${demo_notes_color}`}>
+                              <p className={`text-xs italic mb-4 ${demo_notes_color}`}>
                                 Click anywhere for demo
                               </p>
                             )}
                             {project.demo_notes && (
-                              <p className={`text-xs mb-2 ${demo_notes_color}`}>Demo Notes: {project.demo_notes}</p>
+                              <p className={`text-xs mb-4 ${demo_notes_color}`}>Demo Notes: {project.demo_notes}</p>
                             )}
+                            <div className="mb-2 flex flex-row flex-wrap gap-2">
+                              {project.logos.map((logo, idx) => (
+                                <span key={idx}>{logoMap[logo]}</span>
+                              ))}
+                            </div>
                             <a
                             href={project.github}
                             target="_blank"
