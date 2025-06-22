@@ -10,7 +10,7 @@ import Skills from "./Skills";
 import Contact from "./Contact";
 import UIToggle from "./UIToggle"; 
 
-function SmoothFollower() {
+function SmoothFollower({ isDarkMode }) {
   const mousePosition = useRef({ x: 0, y: 0 });
   const dotPosition = useRef({ x: 0, y: 0 });
   const borderDotPosition = useRef({ x: 0, y: 0 });
@@ -19,6 +19,7 @@ function SmoothFollower() {
     border: { x: 0, y: 0 },
   });
   const [isHovering, setIsHovering] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const DOT_SMOOTHNESS = 0.2;
   const BORDER_DOT_SMOOTHNESS = 0.1;
   useEffect(() => {
@@ -78,12 +79,21 @@ function SmoothFollower() {
       cancelAnimationFrame(animationId);
     };
   }, []);
-  if (typeof window === 'undefined') return null;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  // Choose colors based on mode
+  const color = isDarkMode ? "#fff" : "#171717";
+
   return (
     <div className="pointer-events-none fixed inset-0 z-50">
       <div
-        className="absolute rounded-full bg-white"
+        className="absolute rounded-full"
         style={{
+          background: color,
           width: '8px',
           height: '8px',
           transform: 'translate(-50%, -50%)',
@@ -93,8 +103,9 @@ function SmoothFollower() {
       />
 
       <div
-        className="absolute rounded-full border border-white"
+        className="absolute rounded-full"
         style={{
+          border: `1px solid ${color}`,
           width: isHovering ? '44px' : '28px',
           height: isHovering ? '44px' : '28px',
           transform: 'translate(-50%, -50%)',
@@ -120,7 +131,7 @@ export default function Home() {
 
   return (
     <>
-      <SmoothFollower />
+      <SmoothFollower isDarkMode={isDarkMode} />
       <div className="fixed right-4 top-4 z-50">
         <UIToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </div>
