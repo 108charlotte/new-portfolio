@@ -7,6 +7,7 @@ import Hero from "./Hero";
 import About from "./About";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import Timeline from './Timeline';
 import Contact from "./Contact";
 import UIToggle from "./UIToggle"; 
 
@@ -140,6 +141,7 @@ export default function Home() {
         <About isDarkMode={isDarkMode} />
         <Projects isDarkMode={isDarkMode} />
         <Skills isDarkMode={isDarkMode} />
+        <Timeline isDarkMode={isDarkMode} />
         <Contact isDarkMode={isDarkMode} />
       </main>
     </>
