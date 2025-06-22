@@ -14,7 +14,7 @@ export default function Hero({ isDarkMode }) {
       viewport={{ once: false, amount: 0.3 }}
     >
       <h1>
-        Hi, I'm <span className="name">Charlotte Woodrum</span>
+        Hi, I&apos;m <span className="name">Charlotte Woodrum</span>
       </h1>
       <h3 className="headline">
         Aspiring Software Engineer & AI Enthusiast

@@ -29,7 +29,7 @@ const projects = [
         image: "/Raspberry-pi-monitor.jpg",
         github: "https://github.com/108charlotte/magic-mirror", 
         demo: "https://108charlotte.github.io/magic-mirror/", 
-        latest_updates: "Currently working on re-submitting for OAuth verification to get rid of scary 'unprotected' warning when user tries to grant access to their Google Calendar. ", 
+        latest_updates: "Currently working on re-submitting for OAuth verification to get rid of scary &apos;unprotected&apos; warning when user tries to grant access to their Google Calendar. ", 
         logos: ["HTML", "CSS", "Javascript"]
     }, 
     {
@@ -64,7 +64,7 @@ export default function Projects({ isDarkMode }) {
     
     return (
         <FadeIn id="projects" className="h-screen w-full snap-start flex flex-col items-center justify-start">
-            <h2 className="mb-4 mt-6 md:mt-14 sm:mt-14">Projects</h2>
+            <h2 className="mb-4 mt-2 md:mt-14 sm:mt-14">Projects</h2>
             <div className="flex flex-row overflow-x-auto gap-6 w-full px-4 pb-4 snap-x snap-mandatory">
                 {projects.map((project, idx) => (
                     <motion.a

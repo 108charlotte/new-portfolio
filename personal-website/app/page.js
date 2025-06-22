@@ -11,7 +11,8 @@ import Contact from "./Contact";
 import UIToggle from "./UIToggle"; 
 
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(true
+  );
 
   useEffect(() => {
     if (isDarkMode) {
