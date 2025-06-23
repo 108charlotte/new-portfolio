@@ -62,7 +62,7 @@ export default function Timeline({ isDarkMode }) {
             className="h-screen w-full snap-start flex flex-col items-center justify-center"
         >
             <motion.h2
-                className="mb-4 mt-2 md:mt-14 sm:mt-14"
+                className="mb-4 mt-14 md:mt-14 sm:mt-14"
                 initial={{ opacity: 0, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
