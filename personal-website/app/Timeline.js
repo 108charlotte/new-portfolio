@@ -1,6 +1,7 @@
 import FadeIn from "./FadeIn";
 import TimelineElements from "./TimelineElements"; 
 import { motion } from "framer-motion";
+import { useRef, useLayoutEffect, useState } from "react";
 
 const colorMap = {
   red: "bg-red-500",
@@ -50,12 +51,30 @@ function TimelineCard({ element, isDarkMode }) {
           </a>
         )}
       </div>
-
     </motion.div>
   );
 }
 
 export default function Timeline({ isDarkMode }) {
+    const wrapperRef = useRef(null);
+    const [wrapperHeight, setWrapperHeight] = useState(0);
+
+    useLayoutEffect(() => {
+        if (!wrapperRef.current) return;
+
+        // Initial set
+        setWrapperHeight(wrapperRef.current.scrollHeight);
+
+        // Observe for changes
+        const resizeObserver = new window.ResizeObserver(() => {
+            setWrapperHeight(wrapperRef.current.scrollHeight);
+        });
+        resizeObserver.observe(wrapperRef.current);
+
+        // Clean up
+        return () => resizeObserver.disconnect();
+    }, []);
+
     return (
         <FadeIn
             id="timeline"
@@ -70,15 +89,24 @@ export default function Timeline({ isDarkMode }) {
             >
                 My Journey
             </motion.h2>
-            <div className="flex flex-col gap-6 w-full px-4 pb-4 min-h-full overflow-y-auto relative">
-                <div className="absolute left-1/2 top-0 w-0.5 h-[300vh] bg-gray-400 opacity-30 -translate-x-1/2 z-0"></div>
-                {TimelineElements.map((element, idx) => (
-                  <TimelineCard
-                    key={element.id}
-                    element={element}
-                    isDarkMode={isDarkMode}
-                  />
-                ))}
+            <div
+                className="flex flex-col gap-6 w-full px-4 pb-4 min-h-full overflow-y-auto relative"
+            >
+                {/* The line uses the inner wrapper's height */}
+                <div
+                  className="absolute left-1/2 top-0 w-0.5 bg-gray-400 opacity-30 -translate-x-1/2 z-0"
+                  style={{ height: `${wrapperHeight + 50}px` }}
+                ></div>
+                {/* Inner wrapper to measure */}
+                <div ref={wrapperRef}>
+                  {TimelineElements.map((element, idx) => (
+                    <TimelineCard
+                      key={element.id}
+                      element={element}
+                      isDarkMode={isDarkMode}
+                    />
+                  ))}
+                </div>
             </div>
         </FadeIn>
     );
