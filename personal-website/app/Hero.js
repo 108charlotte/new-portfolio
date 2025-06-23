@@ -53,7 +53,7 @@ export default function Hero(props) {
   }
 
   return (
-    <FadeIn id="hero" className="overflow-y-auto h-screen w-full snap-start flex flex-col items-center justify-center">
+    <FadeIn id="hero" className="h-screen w-full snap-start flex flex-col items-center justify-center">
       <h1>
         Hi, I&apos;m <span className="name">Charlotte Woodrum</span>
       </h1>

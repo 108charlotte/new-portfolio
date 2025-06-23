@@ -4,7 +4,7 @@ const timelineElements = [
         title: "Joined middle school robotics team", 
         description: "Competed on VEX robotics teams for all 3 years of middle school, went to worlds twice (as 6199B and 6199E), programmer for my teams", 
         date: "2020-2024", 
-        icon: "🤖", 
+        icon: "🦾",
         color: "blue", 
         tech: ["C++"] 
     }, 
@@ -13,8 +13,8 @@ const timelineElements = [
         title: "First coding class", 
         description: "Took my first coding class, a semester-long elective, in 8th grade. Learned basic JavaScript and Python, built a few small projects and simple games", 
         date: "2023",
-        icon: "📚",
-        color: "green", 
+        icon: "🛠️",
+        color: "yellow", 
         tech: ["JavaScript", "Python"] 
     }, 
     {
@@ -40,7 +40,7 @@ const timelineElements = [
         title: "Started building personal projects, joined Hack Club", 
         description: "Built first projects outside of school, including a python text adventure game and a simple portfolio. Also participated in Hack Club's High Seas event, prompting me to join the Hack Club community", 
         date: "2025",
-        icon: "🌊",
+        icon: "🛳️",
         color: "blue",
         tech: ["Python", "Web Development"]
     }, 
@@ -57,4 +57,4 @@ const timelineElements = [
     }
 ]
 
-export default timelineElements.reverse(); 
+export default timelineElements.reverse();
