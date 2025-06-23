@@ -1,6 +1,4 @@
 # new-portfolio
-
-## what it is
 This is my personal portfolio website built using React with Tailwind CSS and Framer Motion, meant to introduce myself to those who don't know me and display my projects and skills! 
 
 ## why i made it
