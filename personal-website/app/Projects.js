@@ -49,18 +49,19 @@ const projects = [
       image: "/neural_network_screenshot.png", 
       latest_updates: "Created early model! Struggling with training due to dataset imbalances.", 
       demo: "https://colab.research.google.com/drive/1fgtDtVT_hqawJ50hEbn7ggg139AvaAN6?usp=sharing", 
-      logos: []
+      logos: ["Pytorch"]
     }
 ]
 
 const logoMap = {
-  Python: <Languages path="/python_logo.png" label="Python" size="w-8 h-8" imgClassName="w-5 h-5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
-  HTML: <Languages path="/html_logo.png" label="HTML" size="w-8 h-8" imgClassName="w-4.5 h-4.5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
-  CSS: <Languages path="/css_logo.png" label="CSS" size="w-8 h-8" imgClassName="w-4.5 h-4.5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
-  Javascript: <Languages path="/javascript_logo.png" label="JavaScript" size="w-8 h-8" imgClassName="w-4 h-4" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  Python: <Languages path="/python_logo.svg" label="Python" size="w-8 h-8" imgClassName="w-5 h-5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  HTML: <Languages path="/html_logo.svg" label="HTML" size="w-8 h-8" imgClassName="w-4.5 h-4.5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  CSS: <Languages path="/css_logo.svg" label="CSS" size="w-8 h-8" imgClassName="w-4.5 h-4.5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  Javascript: <Languages path="/javascript_logo.svg" label="JavaScript" size="w-8 h-8" imgClassName="w-4 h-4" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
   Flask: <Frameworks path="/flask_logo.svg" label="Flask" size="w-8 h-8" imgClassName="w-5 h-5" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
   React: <Frameworks path="/react_logo.svg" label="React" size="w-8 h-8" imgClassName="w-6 h-6" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
-  Godot: <Platforms path="/godot_logo.svg" label="Godot" size="w-8 h-8" imgClassName="w-5 h-5 -rotate-45" labelClassName="mt-2" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  Godot: <Platforms path="/Godot.png" size="w-8 h-8" imgClassName="w-5 h-5 -rotate-45" labelClassName="mt-2" textSize="text-[10px]" labelMargin="mt-0" forceColumn={true} width="w-14" />,
+  Pytorch: <Frameworks path="/Pytorch.png"/>
 };
 
 
