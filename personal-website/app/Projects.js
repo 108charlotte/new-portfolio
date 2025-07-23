@@ -29,18 +29,27 @@ const projects = [
         image: "/Raspberry-pi-monitor.jpg",
         github: "https://github.com/108charlotte/magic-mirror", 
         demo: "https://108charlotte.github.io/magic-mirror/", 
-        latest_updates: "Currently working on re-submitting for OAuth verification to get rid of scary &apos;unprotected&apos; warning when user tries to grant access to their Google Calendar. ", 
+        latest_updates: "Currently working on re-submitting for OAuth verification to get rid of scary \"unprotected\" warning when user tries to grant access to their Google Calendar. ", 
         logos: ["HTML", "CSS", "Javascript"]
     }, 
     {
-        extra: "Sneak Peek! ", 
+      /* extra: "Sneak Peek! ", */
         title: "Chef Crawler", 
         description: "A godot roguelike game in which the player gathers ingredients and combines them to create dishes which provide power-ups or temporarily disable them. ", 
         github: "https://github.com/108charlotte/Chef-Crawler", 
         image: "/chef_crawler_image.png", 
-        latest_updates: "Got basic roguelike game mechanics working! ", 
-        demo_notes: "This project is still in development so there is no demo available yet. ", 
+        latest_updates: "Deployed on itch!", 
+        demo: "https://108charlotte.itch.io/chef-crawler", 
         logos: ["Godot"]
+    }, 
+    {
+      extra: "Early WIP!", 
+      title: "FRC Object Detection Model", 
+      description: "A custom CNN created using Pytorch for game piece classification for the FRC 2025 season game \"Reefscape\"", 
+      image: "/neural_network_screenshot.png", 
+      latest_updates: "Created early model! Struggling with training due to dataset imbalances.", 
+      demo: "https://colab.research.google.com/drive/1fgtDtVT_hqawJ50hEbn7ggg139AvaAN6?usp=sharing", 
+      logos: []
     }
 ]
 
@@ -124,15 +133,17 @@ export default function Projects({ isDarkMode }) {
                                 <span key={idx}>{logoMap[logo]}</span>
                               ))}
                             </div>
-                            <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="email underline hover:no-underline text-sm mt-2"
-                            onClick={e => e.stopPropagation()}
-                            >
-                            Github Repo
-                            </a>
+                            {project.github && (
+                              <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="email underline hover:no-underline text-sm mt-2"
+                              onClick={e => e.stopPropagation()}
+                              >
+                              Github Repo
+                              </a>
+                            )}
                         </div>
                     </motion.div>
                 ))}
